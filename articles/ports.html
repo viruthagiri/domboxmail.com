@@ -1,0 +1,974 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <title>Dombox - SMTP Ports (25 vs 587 vs 465)</title>
+
+    
+    <link rel="shortcut icon" href="http://domboxxmail.com/favicon.ico">
+
+    
+    <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+    
+    <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+
+    
+    
+    
+    
+    
+    
+    
+
+    <link rel="stylesheet" href="../assets/css/dombox.min.css">
+    <link rel="stylesheet" href="../assets/css/misc.css">
+    
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121619257-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-121619257-2');
+    </script>
+    
+</head>
+
+<body>
+
+
+<div class="bg-soft-primary">
+    <div class="container">
+        <div class="p-2 text-center">
+            <span class="btn btn-xs btn-soft-danger font-weight-semi-bold rounded mr-2">Important Notice</span> Apple copied our product as "Sign in with Apple" and putting millions of developers at risk. <a href="../news/apple-copied-our-product.html">Learn More.</a>
+        </div>
+    </div>
+</div>
+
+
+<header id="header" class="u-header u-header-left-aligned-nav ">
+    <div class="u-header__section">
+        <div id="logoAndNav" class="container">
+            
+            <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+
+                <ul class="navbar-nav u-header__navbar-nav" style="width: auto">
+
+                    
+                    <li class="nav-item u-header__nav-item">
+                        <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="../index.html">
+                            <img style="margin-right: 0;max-height: 55px;" src="../assets/images/logo.png">
+                        </a>
+                    </li>
+                    
+
+                </ul>
+                
+                <button type="button" class="navbar-toggler btn u-hamburger"
+                        aria-label="Toggle navigation"
+                        aria-expanded="false"
+                        aria-controls="navBar"
+                        data-toggle="collapse"
+                        data-target="#navBar">
+          <span id="hamburgerTrigger" class="u-hamburger__box">
+            <span class="u-hamburger__inner"></span>
+          </span>
+                </button>
+                
+
+                
+                <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                    <ul class="navbar-nav u-header__navbar-nav">
+
+                    
+                        
+                        <li class="nav-item u-header__nav-item dbx-header-item nav-second-item">
+                            
+                                
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item u-header__nav-item dbx-header-item ">
+                            <a class="nav-link u-header__nav-link" href="../features.html">Features</a>
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="productsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="productsSubMenu">Products</a>
+
+                            
+                            <ul id="productsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="productsMegaMenu" style="min-width: 230px;">
+
+                                <li class="hs-has-sub-menu " style="padding-bottom: 10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/signin.html">Sign In with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/subscribe.html">Subscribe with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/contract.html">Contract with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/pre-signup.html">Pre-Signup with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/generate.html">Generate with Dombox</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="solutionsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="solutionsSubMenu">Solutions</a>
+
+                            
+                            <ul id="solutionsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="solutionsMegaMenu" style="min-width: 330px;">
+
+                                <li class="hs-has-sub-menu " style="padding-bottom: 10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/sad.html">Sender Alias Domains (SAD)</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/rtav.html">Real-Time Address Verification (RTAV)</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/cea.html">Conversational Email Address (CEA)</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/mst.html">Mail Score for Transparency (MST)</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="proposalsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="proposalsSubMenu">Proposals</a>
+
+                            
+                            <ul id="proposalsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="proposalsMegaMenu" style="min-width: 230px;">
+
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../proposals/smtps.html">SMTP Over TLS on Port 26</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="articlesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="articlesSubMenu">Articles</a>
+
+                            
+                            <ul id="articlesSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="articlesMegaMenu" style="min-width: 260px;">
+
+                                <li class="hs-has-sub-menu " style="padding-bottom:10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="layers.html">Dombox Layers</a>
+                                </li>
+                                <li class="hs-has-sub-menu " style="padding-top:10px;padding-bottom:10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="privacy.html">Internet Privacy</a>
+                                </li>
+                                <li class="hs-has-sub-menu x-nav-active" style="padding-top: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="ports.html">SMTP Ports (25 vs 587 vs 465)</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="newsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="newsSubMenu">News</a>
+
+                            
+                            <ul id="newsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="newsMegaMenu" style="min-width: 250px;">
+
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../news/apple-copied-our-product.html">Apple copied our Product</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        
+                            
+                        
+                        
+                    
+
+                    
+                        
+                        
+                            
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                                
+                            
+                        
+                        
+                        
+                        <li class="nav-item u-header__nav-item ml-2">
+                            <a class="btn btn-sm btn-primary transition-3d-hover" href="../signup.html">
+                                
+                                Pre-SignUp
+                            </a>
+                        </li>
+                        
+                    
+                    </ul>
+                </div>
+                
+            </nav>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+<div class="bg-primary d-none d-xl-block">
+    <div class="container">
+        <div class="row">
+            <div id="subNavBar" class="navbar sub-navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                <ul class="navbar-nav align-items-md-center u-header__navbar-nav">
+                    <li class="nav-item u-header__nav-item  home-nav">
+                        <a class="nav-link u-header__nav-link" href="../index.html"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/signin.html">Sign In with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/subscribe.html">Subscribe with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/contract.html">Contract with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/pre-signup.html">Pre-SignUp with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/generate.html">Generate with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item">
+                        <a class="nav-link u-header__nav-link" style="padding-top: 1.1rem;padding-bottom: 0.9rem;" href="../index.html"><i class="far fa-arrow-alt-circle-right" style="font-size: 20px"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<a class="js-go-to u-go-to" href="ports.html#"
+   data-position='{"bottom": 15, "right": 15 }'
+   data-type="fixed"
+   data-offset-top="400"
+   data-compensation="#header"
+   data-show-effect="slideInUp"
+   data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+</a>
+
+
+<main id="content" role="main">
+    <div class="container space-top-2 space-bottom-1">
+        <div class="row">
+            <div id="stickyBlockStartPoint" class="col-md-4 col-lg-3 mb-7 mb-md-0">
+                
+                <nav class="js-sticky-block card shadow-sm p-4"
+                     data-parent="#stickyBlockStartPoint"
+                     data-sticky-view="md"
+                     data-start-point="#stickyBlockStartPoint"
+                     data-end-point="#stickyBlockEndPoint"
+                     data-offset-top="24"
+                     data-offset-bottom="24">
+                    <ul class="js-scroll-nav list-group list-group-transparent list-group-flush list-group-borderless">
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#overview">Overview</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#http-vs-https">HTTP vs HTTPS</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#ssl-tls">SSL/TLS</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#https-vs-smtps">HTTPS vs SMTPS</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#extended-smtp">Extended SMTP</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#starttls">STARTTLS</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#striptls">STRIPTLS</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="ports.html#port-history">Port History</a>
+
+                            <ul class="list-group list-group-transparent list-group-flush list-group-borderless">
+                                <li>
+                                    <a class="list-group-item list-group-item-action mb-2" href="ports.html#port-25">Port 25</a>
+                                </li>
+                                <li>
+                                    <a class="list-group-item list-group-item-action mb-2" href="ports.html#port-587">Port 587</a>
+                                </li>
+                                <li>
+                                    <a class="list-group-item list-group-item-action mb-2" href="ports.html#port-465">Port 465</a>
+                                </li>
+                                <li>
+                                    <a class="list-group-item list-group-item-action mb-2" href="ports.html#port-26">Port 26</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+            <div class="col-md-8 col-lg-9" style="font-size: 18px">
+
+                <div id="overview">
+                    <div class="border-bottom pb-3 mb-4">
+                        <h1 class="text-primary"><span class="font-weight-semi-bold">SMTP Ports</span> (25 vs 587 vs 465)</h1>
+                        <p>This article is written to provide some base for our <a href="../proposals/smtps.html">SMTP Over
+                            TLS on Port 26</a> proposal. This document explains the concept STRIPTLS attack and explains
+                            the difference between SMTP Ports (25 vs 587 vs 465).</p>
+                        <p>Let's begin.</p>
+                    </div>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="http-vs-https">HTTP vs HTTPS</h2>
+                    <p>You obviously heard of “HTTP” and “HTTPS”. But do you know that we don’t have SMTPS in email?
+                        SMTPS was actually introduced in the late 90s, but within a short period of time, it got
+                        deprecated.</p>
+                    <p>Whenever we mention the term “HTTP”, we are talking about “Plain Text”. When you load a HTML page, this is
+                        how your internet service provider (ISP) sees the data.</p>
+                    <div class="highlight">
+                    <pre style="margin-bottom: 0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;p&gt;Hello World&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    <p>When you submit username and password in a login form, it will be sent as Plain Text like
+                        this.</p>
+                    <div class="highlight">
+                    <pre style="margin-bottom: 0"><code>username=someuser&amp;pass=password</code></pre>
+                    </div>
+                    <p>Your ISP can modify that data. In 2017, <a target="_blank"
+                            href="https://thenextweb.com/insights/2017/12/11/comcast-continues-to-inject-its-own-code-into-websites-you-visit/">Comcast
+                        injected</a> 400+ lines of javascript code to advertise their modem.</p>
+                    <p>HTTPS means fully encrypted. A secure connection is established first before exchanging any data.
+                        That means your ISP cannot able to eavesdrop what you do online unless they have access to your
+                        web browser or the web server or the private key. The snooped data would look like nothing but a
+                        grabage text. So it’s not possible to inject code in the HTTPS case.</p>
+                    <p>HTTP and HTTPS are two different protocols. HTTP official port is 80 and the HTTPS official port
+                        is 443. When you visit www.facebook.com in HTTP, you are actually
+                        connecting to www.facebook.com:80 and when you visit in HTTPS, you are connecting to www.facebook.com:443</p>
+                    <p>Sir Tim Berners-Lee invented the World Wide Web in 1989 and introduced HTTP 1.0 in 1996 in an <a
+                            href="https://tools.ietf.org/html/rfc1945">Informational RFC</a>. HTTP officially became an
+                        internet standard in <a href="https://tools.ietf.org/html/rfc2068">1997</a>.</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="ssl-tls">SSL/TLS</h2>
+                    <p>Now… let’s talk about some SSL/TLS history.</p>
+                    <p>In the mid 90s, <a href="https://en.wikipedia.org/wiki/Netscape_(web_browser)">Netscape</a> was the most popular web browser and the browsers were a paid software
+                        at that time.</p>
+                    <p>At that time, Microsoft also wanted to get into browser business. Microsoft’s Windows operating
+                        system already had 90% of the market share. On new Windows OS releases, Microsoft included the
+                        Internet Explorer browser for free, whereas you need to download other browsers. Keep in mind,
+                        those were dial-up modem days. Hence, the internet speed was very slow. Microsoft strategies
+                        helped them to gain browser market share. IE became the most popular browser in the late
+                        90s.</p>
+                    <p>Netscape actually developed the SSL protocol in mid 90s. The first version had some serious flaws
+                        so they never released it to the public. Then, they released SSL 2.0 in 1995. But there were
+                        still some flaws.</p>
+                    <p>Microsoft created its own version of SSL for IE in 1995 and they called it the <a
+                            href="https://en.wikipedia.org/wiki/Private_Communications_Technology">Private Communication
+                        Technology (PCT)</a>. It works exactly like SSL 2.0 but it also fixed the flaws found in SSL 2.0
+                    </p>
+                    <p>Netscape didn’t give up. They started to fix all the SSL flaws encountered back then and
+                        released SSL 3.0 in 1996.</p>
+                    <p>Industry insiders doesn’t want another SSL. So, they made Microsoft to <a
+                            href="http://tim.dierks.org/2014/05/security-standards-and-name-changes-in.html">negotiate a
+                        deal</a> with Netscape where a third party would take over the SSL and PCT projects and make it
+                        open source. Thus begun the TLS Era. They named the new open source protocol as TLS.</p>
+                    <p>TLS 1.0 is nothing but SSL 3.0 with some slight modifications. SSL was a proprietary protocol back then. All versions of SSL are outdated now. Your web servers
+                        should not support SSL at all.</p>
+                    <p>When it comes to marketing, the term “SSL” is widely used. So use the term “SSL” only if you are
+                        planning to buy SSL certificates. For example, the search term “Buy SSL Certificates” can fetch you more relevant results than “Buy
+                        TLS Certificates”. So, “Buy SSL, Use TLS”</p>
+                </div>
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="https-vs-smtps">HTTPS vs SMTPS</h2>
+                    <p>TLS 1.0 was introduced in <a href="https://tools.ietf.org/html/rfc2246">1999</a>. HTTPS was
+                        introduced in <a href="https://tools.ietf.org/html/rfc2818">2000</a>.</p>
+                    <p>HTTPS had some advantages when compared to SMTPS.</p>
+                    <p>First, HTTP was relatively young standard while compared to SMTP. Email was invented in 1971 by
+                        <a href="https://en.wikipedia.org/wiki/Ray_Tomlinson">Ray Tomlinson</a>. 10 years later, Jon Postel defined SMTP in <a
+                                href="https://tools.ietf.org/html/rfc821">1982</a>. When TLS 1.0 introduced in 1999,
+                        SMTP was a very matured and widely used technology.</p>
+                    <p>Second, HTTP already had redirect capabilities. 301 — Moved Permanently, 302 — Moved Temporarily.
+                        Browsers can understand those HTTP status codes. So if you visit http version of www.example.com, the server can respond like this</p>
+                    <div class="highlight">
+                    <pre style="margin-bottom: 0"><code>HTTP/1.1 301 Moved Permanently
+Location: https://www.example.com</code></pre>
+                    </div>
+                    <p>SMTP don’t have any such redirect capabilities.</p>
+                    <p>Third, the majority of the people in the world, use web browsers for browsing the “world wide web
+                        (www)”. So web browsers are the major HTTP clients. TLS is already a byproduct of both Netscape
+                        and Microsoft. And they both held the major browser market share. All they have to do is just
+                        add HTTPS support in their next browser versions. End of story.</p>
+                    <p>In SMTP case, there is only a dozen commands out there. HELO, MAIL, RCPT, DATA, QUIT etc.
+                        So it’s very easy to build your own SMTP client. That means the “SMTP Clients” are not
+                        controlled by a handful of entities like “HTTP Clients”. Persuading every SMTP Client and SMTP
+                        Server to support SMTPS is not possible here.</p>
+                    <p>SMTP port is 25. When SMTPS got introduced they assigned port 465 for that. Since SMTPS is not
+                        backward compatible, they discontinued that port and favoured Opportunistic TLS.</p>
+                </div>
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="extended-smtp">Extended SMTP</h2>
+                    <p>Let’s travel back to mid 90s again. In <a href="https://tools.ietf.org/html/rfc1869">1995</a>
+                        “SMTP Service Extensions” got introduced. This is also known as “Extended SMTP” or “ESMTP”. So
+                        when SMTPS discontinued in the late 90s, we already had ESMTP support.</p>
+                    <div class="highlight">
+                    <pre style="margin-bottom: 0"><code>mail.example.com connecting to mail.yahoo.com with its IP address
+yahoo.com => 220 mail.yahoo.com Yahoo ESMTP Service Ready
+example.com => EHLO mail.example.com
+yahoo.com => 250-Hello, nice to meet you, mail.example.com
+yahoo.com => 250-SIZE 1000000
+yahoo.com => 250-8BITMIME
+yahoo.com => 250 STARTTLS
+example.com => STARTTLS
+yahoo.com => 220 Go ahead
+Key exchange happens here and the rest of the email part is encrypted</code></pre>
+                    </div>
+                    <p>Pay attention to the third line here. EHLO means “Extended Hello”. If a server already supports
+                        those ESMTP commands, then it’s gonna respond with its list of supported extensions in multiline
+                        format (See hyphen near 250 code).</p>
+                    <p>If the server doesn’t recognise EHLO command, that means it doesn’t support ESMTP. <a
+                            href="https://tools.ietf.org/html/rfc821">RFC 821</a> compatible SMTP server gonna respond
+                        with 500 error. 500 error means “Syntax error, command unrecognised”. So you can retry with the
+                        normal HELO command.</p>
+                    <p>The 250-SIZE extension is for “Message size declaration”. There are more SMTP extensions
+                        available. CHUNKING, PIPELINING, SMTPUTF8 etc. But we are interested in the STARTTLS
+                        extension.</p>
+                </div>
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="starttls">STARTTLS</h2>
+                    <p>STARTTLS extension got introduced in 1999. Paul Hoffman discontinued port 465 in <a
+                            href="https://web.archive.org/web/20120807221411/http:/www.imc.org:80/ietf-apps-tls/mail-archive/msg00204.html">Nov
+                        1998</a> and introduced STARTTLS two months later in <a
+                            href="https://tools.ietf.org/html/rfc2487">Jan 1999</a>.</p>
+                    <p>STARTTLS is an “Opportunistic TLS” command. Whereas SMTPS is “Implicit TLS”.</p>
+                    <p>SMTPS is equivalent to HTTPS. Top to bottom everything encrypted. On the other hand, STARTTLS is
+                        an Opportunistic encryption. The opportunity for encryption is checked here in “Plain Text”.</p>
+                    <p>In our last SMTP example, upto the line “220 Go ahead”, the conversation happens in “Plain Text”
+                        format. The key get exchanged and everything after that line like MAIL FROM, RCPT TO etc are
+                        encrypted.</p>
+                </div>
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="striptls">STRIPTLS</h2>
+                    <p>There is one problem here. A man-in-the-middle attack can be initiated in the Opportunistic TLS
+                        that’s known as “STRIPTLS” attack.</p>
+                    <p>In STRIPTLS attack, the attacker gonna strip the STARTTLS command. An experienced attacker would
+                        make the command unrecognised by replacing the characters to make it compatible with the Packet
+                        Size. e.g. STARTTLS =&gt; STARTXXX</p>
+                    <p>Let’s go over our ESMTP example, one more time.</p>
+                    <div class="highlight">
+<pre style="margin-bottom: 0"><code>mail.example.com connecting to mail.yahoo.com with its IP address
+yahoo.com => 220 mail.yahoo.com Yahoo ESMTP Service Ready
+example.com => EHLO mail.example.com
+yahoo.com => 250-Hello, nice to meet you, mail.example.com
+yahoo.com => 250-SIZE 1000000
+yahoo.com => 250-8BITMIME
+yahoo.com => 250 STARTXXX</code></pre>
+                    </div>
+                    <p>In the last example, the client (sender) is asking “Hello, What are the extensions do you
+                        support?” and the receiver (server) responds with the list of extensions.</p>
+                    <p>The attacker replaced the STARTTLS command in the last example. Since the client (sender) doesn’t
+                        recognize the STARTXXX command, the whole mail will be transferred in “Plain Text”. <a
+                                href="https://www.eff.org/deeplinks/2014/11/starttls-downgrade-attacks">Some ISPs</a> in
+                        the US and Thailand performed this attack on their customers back in 2014.</p>
+                    <p>STRIPTLS attack is a serious issue. An attacker can hijack your social media account with the
+                        help of STRIPTLS attacks.</p>
+                    <p>e.g. Attacker Initiates forgot password request in Facebook, performs STRIPTLS attack. Now the
+                        attacker has your password reset confirmation link. We are using Facebook as an example. It can be
+                        applicable to any site that let you reset your password with a confirmation link.</p>
+                </div>
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="port-history">Port History</h2>
+                    <p>Let's have a clear understanding of SMTP port history.</p>
+
+                    <h3 id="port-25">Port 25</h3>
+                    <p>Year introduced: 1982</p>
+                    <p>Since the inception of SMTP, the port always been 25. Port 25 is a public port. i.e. anyone can
+                        use that port to deliver mail.</p>
+                    <p>Port 25 will be used when a mail get transferred from one domain to another.</p>
+                    <p><a href="https://tools.ietf.org/html/rfc821">RFC 821</a> — Page 43 reads as follows</p>
+                    <blockquote>
+                        <p>The SMTP transmission channel is a TCP connection established between the sender process
+                            port U and the receiver process port L. This single full duplex connection is used as the
+                            transmission channel. This protocol is assigned the service port 25 (31 octal), that is
+                            L=25.</p>
+                    </blockquote>
+                    <p>IANA service name: <a
+                            href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?&page=1">smtp</a>
+                    </p>
+
+                    <h3 id="port-587">Port 587</h3>
+                    <p>Year introduced: 1998</p>
+                    <p>When you send a mail from your mail client like iPhone app or any desktop mail app, SMTP is being
+                        utilised in two areas. Submission and Transfer.</p>
+                    <p>Your mail client (e.g. An iPhone mail app) submits the mail to the mail server (e.g. gmail.com)
+                        via SMTP.</p>
+                    <p>The mail server performs spam and virus checks and then transfers the mail to the real recipient
+                        (e.g. someone@yahoomail.com).</p>
+                    <p>So port 25 utilised for both “Submission” and “Transfer”.</p>
+                    <p>After the invention of world wide web, internet started to see a hike in email usage. Mail
+                        services like HotMail, YahooMail started to appear in the 90s.</p>
+                    <p>There was a hike in email spam too. Hackers started to hijack user computers by spreading worms and use
+                        them to send out spam mails without the users knowledge.</p>
+                    <p>Internet Service Providers (ISP) who have millions of customers don’t want their Internet
+                        Service utilised for sending spam mails. i.e. They don’t want their service used for “Transfer”
+                        (direct-to-mx). Blocking all outgoing port 25 connections also blocks genuine mail submission connections.  </p>
+                    <p>So there was a need for another port dedicated for “Submission”. RFC 2476 introduced port 587.
+                        It’s an exact replica of port 25 functionality. But requires authentication for mail submission
+                        (i.e. iPhone mail app to Gmail Server).</p>
+                    <p>In other words, port 25 is for “Public SMTP aka. Transfer”, port 587 is for “Private SMTP aka.
+                        Submission”</p>
+                    <p><a href="https://tools.ietf.org/html/rfc2476">RFC 2476</a> — Abstract reads as follows</p>
+                    <blockquote>
+                        <p>SMTP was defined as a message *transfer* protocol, that is, a means to route (if needed)
+                            and deliver finished (complete) messages. Message Transfer Agents (MTAs) are not supposed to
+                            alter the message text, except to add ‘Received’, ‘Return-Path’, and other header fields as
+                            required by [SMTP-MTA].</p>
+                        <p>However, SMTP is now also widely used as a message *submission* protocol, that is, a
+                            means for message user agents (MUAs) to introduce new messages into the MTA routing network.
+                            The process which accepts message submissions from MUAs is termed a Message Submission Agent
+                            (MSA).</p>
+                        <p>Messages being submitted are in some cases finished (complete) messages, and in other
+                            cases are unfinished (incomplete) in some aspect or other. Unfinished messages need to be
+                            completed to ensure they conform to [MESSAGE-FORMAT], and later requirements. For example,
+                            the message may lack a proper ‘Date’ header field, and domains might not be fully qualified.
+                            In some cases, the MUA may be unable to generate finished messages (for example, it might
+                            not know its time zone). Even when submitted messages are complete, local site policy may
+                            dictate that the message text be examined or modified in some way. Such completions or
+                            modifications have been shown to cause harm when performed by downstream MTAs — that is,
+                            MTAs after the first-hop submission MTA — and are in general considered to be outside the
+                            province of standardized MTA functionality.</p>
+                        <p>Separating messages into submissions and transfers allows developers and network
+                            administrators to more easily:</p>
+                        <p>Implement security policies and guard against unauthorized mail relaying or injection of
+                            unsolicited bulk mail</p>
+                        <p>Implement authenticated submission, including off-site submission by authorized users such as
+                            travelers</p>
+                        <p>Separate the relevant software code differences, thereby making each code base more
+                            straightforward and allowing for different programs for relay and submission</p>
+                        <p>Detect configuration problems with a site’s mail clients</p>
+                        <p>Provide a basis for adding enhanced submission services in the future</p>
+                        <p>This memo describes a low cost, deterministic means for messages to be identified as
+                            submissions, and specifies what actions are to be taken by a submission server.</p>
+                    </blockquote>
+                    <p>Page 3 reads as follows</p>
+                    <blockquote>
+                        <p>Port 587 is reserved for email message submission as specified in this document. Messages
+                            received on this port are defined to be submissions. The protocol used is ESMTP [SMTP-MTA,
+                            ESMTP], with additional restrictions as specified here.</p>
+                    </blockquote>
+                    <p>IANA service name: <a
+                            href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?&page=11">submission</a>
+                    </p>
+                    <p>The service name should have been termed as: SMSP (Simple Mail Submission Protocol)</p>
+
+                    <h3 id="port-465">Port 465</h3>
+                    <p>Introduced: Early 1997</p>
+                    <p>Discontinued: Late 1998</p>
+                    <p>Reintroduced: 2018</p>
+                    <p>This is one messed up port.</p>
+                    <p>When TLS got introduced in the late 90s, IANA quickly registered the port 465 with service name
+                        “smtps”. In other words, this port is supposed to be used for secure version of the real SMTP.
+                        i.e. Port 25 alternative (Transfer).</p>
+                    <p>But there was no way to use that port in “Transfer”. The problem is identifying whether the
+                        receiving server supports SMTPS or not. Recall our “301 — Moved Permanently” example. So they
+                        took a different route and introduced Opportunistic TLS in port 25. i.e. STARTTLS</p>
+                    <p>The port 465 was never used in the “Transfer”. Hence, IANA revoked “smtps” service and assigned
+                        the port 465 to a completely irrelevant service called “URL Rendezvous Directory for SSM”</p>
+                    <p>This is where things get interesting. IANA paid attention only to the “Transfer” part. But mail
+                        client softwares started to use that port for “Submission”. i.e. Secure alternative for Port
+                        587.</p>
+                    <p>Softwares are long lived. I mean, come on… People still use IE6.</p>
+                    <p>When IANA assigned that port to some other service, developers continued to offer secure version
+                        of port 587 unofficially in port 465.</p>
+                    <p>RFC 8314 made port 465 official in 2018. So
+                        IANA reassigned that port with the service name “submissions”. It’s not a plural form. “s”
+                        stands for “secure”. It should be pronounced as “SubmissionS”</p>
+                    <p>IANA service name: submissions</p>
+                    <p>The service name should have been termed as: SMSPS (Simple Mail Submission Protocol Secure)</p>
+                    <p><a href="https://tools.ietf.org/html/rfc8314">RFC 8314</a> — Section 7.3 reads as follows</p>
+                    <blockquote>
+                        <p>Historically, port 465 was briefly registered as the "smtps" port.
+                            This registration made no sense, as the SMTP transport MX
+                            infrastructure has no way to specify a port, so port 25 is always
+                            used.  As a result, the registration was revoked and was subsequently
+                            reassigned to a different service.  In hindsight, the "smtps"
+                            registration should have been renamed or reserved rather than
+                            revoked.  Unfortunately, some widely deployed mail software
+                            interpreted "smtps" as "submissions" [RFC6409] and used that port for
+                            email submission by default when an end user requested security
+                            during account setup.  If a new port is assigned for the submissions
+                            service, either (a) email software will continue with unregistered
+                            use of port 465 (leaving the port registry inaccurate relative to
+                            de facto practice and wasting a well-known port) or (b) confusion
+                            between the de facto and registered ports will cause harmful
+                            interoperability problems that will deter the use of TLS for Message
+                            Submission.  The authors of this document believe that both of these
+                            outcomes are less desirable than a "wart" in the registry documenting
+                            real-world usage of a port for two purposes.  Although STARTTLS on
+                            port 587 has been deployed, it has not replaced the deployed use of
+                            Implicit TLS submission on port 465.</p>
+                    </blockquote>
+                    <h3 id="port-26">Port 26 <span class="btn btn-xs btn-soft-success font-weight-semi-bold rounded mr-2" style="font-size: 14px">New Proposal</span></h3>
+                    <p>SMTP Over TLS on Port 26 is our new proposal. </p>
+                    <p>Email "Submission" part supports both SMTP (587) and SMTPS (465)</p>
+                    <p>Email "Transfer" part supports only SMTP (25). SMTPS is still missing.</p>
+                    <p>Our proposal offers two ways.</p>
+                    <h3>1. STARTTLS Prefix</h3>
+                    <p>Use this prefix on your MX records only to deal with STARTTLS downgrade issue.</p>
+                    <p>e.g. mx1.example.com should be prefixed like starttls-mx1.example.com.</p>
+                    <p>Where “starttls-” says “Our port 25 supports Opportunistic TLS. So if STARTTLS command not found in the EHLO response or certificate is invalid, then drop the connection”.</p>
+                    <h3>2. SMTPS Prefix</h3>
+                    <p>Use this prefix on your MX records if you wanna support both Implicit TLS on port 26 and Opportunistic TLS on port 25.</p>
+                    <p>e.g. mx1.example.com should be prefixed like smtps-mx1.example.com.</p>
+                    <p>Where “smtps-” says “We prefer if you connect to our SMTPS in port 26. But we also accept mails in port 25. And our port 25 supports Opportunistic TLS. So if STARTTLS command not found in the EHLO response or certificate is invalid, then drop the connection”.</p>
+                    <p>In “starttls-” prefix, port 25 <b>MUST</b> support encryption with <b>Valid SSL</b> certificates.</p>
+                    <p>In “smtps-” prefix, <b>BOTH</b> port 26 and port 25 <b>MUST</b> support encryption with <b>Valid SSL</b> certificates.</p>
+                    <div class="alert alert-primary" role="alert">
+                        Continue our SMTP Over TLS on Port 26 proposal <a href="../proposals/smtps.html">here</a>.
+                    </div>
+                </div>
+
+            
+
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="display: flex; justify-content: center; ">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_email"></a>
+    <a class="a2a_button_reddit"></a>
+    <a class="a2a_button_whatsapp"></a>
+    <a class="a2a_button_linkedin"></a>
+    <a class="a2a_button_hacker_news"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+
+
+            </div>
+
+        </div>
+    </div>
+    <div id="stickyBlockEndPoint"></div>
+</main>
+
+
+
+
+<footer id="SVGwave7BottomShape" class="svg-preloader position-relative border-top">
+    
+    <div class="container space-2">
+        <div class="text-center">
+            
+            <a class="d-inline-flex align-items-center mb-5" href="../index.html" aria-label="Dombox">
+                <img style="max-height: 55px;" src="../assets/images/logo.png">
+            </a>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 col-lg-6 mb-7 mb-sm-0">
+                <div class="mb-4">
+                    <h3>Dombox is... <br><strong class="text-primary">Isolated</strong> and <strong class="text-primary">Privacy-Focused</strong> </h3>
+                </div>
+                <a class="btn btn-primary btn-sm transition-3d-hover" href="../signup.html">
+                    
+                    Pre-SignUp
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-lg-2 mb-4 mb-sm-0 ml-lg-auto">
+                <h4 class="h6 font-weight-semi-bold">Products</h4>
+
+                
+                <ul class="list-group list-group-flush list-group-borderless mb-0">
+                    <li><a class="list-group-item list-group-item-action" href="../products/signin.html">Sign in</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../products/subscribe.html">Subscribe</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../products/contract.html">Contract</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="col-sm-3 col-lg-2 mb-4 mb-sm-0 ml-lg-auto">
+                <h4 class="h6 font-weight-semi-bold">Solutions</h4>
+
+                
+                <ul class="list-group list-group-flush list-group-borderless mb-0">
+                    <li><a class="list-group-item list-group-item-action" href="../solutions/sad.html">SAD</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../solutions/rtav.html">RTAV</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../solutions/cea.html">CEA</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="col-sm-3 col-lg-2">
+                <h4 class="h6 font-weight-semi-bold">Resources</h4>
+
+                
+                <ul class="list-group list-group-flush list-group-borderless mb-0">
+                    <li><a class="list-group-item list-group-item-action" href="mailto:support@dombox.org">Contact</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../terms.html">Terms</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../privacy.html">Privacy</a></li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="container space-1">
+        <div class="row justify-content-end">
+            <div class="col-md-5 text-right">
+                <p class="small mb-0">&copy; 2020 Dombox. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <figure class="ie-wave-7-bottom w-80 w-md-65 w-lg-50 position-absolute bottom-0 left-0 z-index-n1">
+        <img class="js-svg-injector" src="../assets/svg/components/wave-7-bottom.svg" alt=""
+             data-parent="#SVGwave7BottomShape">
+    </figure>
+    
+</footer>
+
+
+
+
+<script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+<script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src="../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+<script src="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../assets/js/hs.core.js"></script>
+<script src="../assets/js/components/hs.header.js"></script>
+<script src="../assets/js/components/hs.unfold.js"></script>
+<script src="../assets/js/components/hs.svg-injector.js"></script>
+<script src="../assets/js/components/hs.malihu-scrollbar.js"></script>
+
+
+<script src="../assets/js/components/hs.go-to.js"></script>
+
+
+<script src="../assets/js/components/hs.show-animation.js"></script>
+<script src="../assets/js/components/hs.scroll-nav.js"></script>
+<script src="../assets/js/components/hs.file-attach.js"></script>
+
+
+
+
+
+
+<script src="../assets/js/components/hs.focus-state.js"></script>
+
+
+
+
+
+
+
+
+<script src="../assets/js/components/hs.sticky-block.js"></script>
+
+
+
+<script>
+    $(window).on('load', function () {
+        
+        $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            pageContainer: $('.container'),
+            breakpoint: 767.98,
+            hideTimeOut: 300
+        });
+
+
+        
+        $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+
+        
+        $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+            duration: 700
+        });
+        
+    });
+
+    $(document).on('ready', function () {
+        
+        $.HSCore.components.HSHeader.init($('#header'));
+        
+        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+            afterOpen: function () {
+                $(this).find('input[type="search"]').focus();
+            }
+        });
+
+        
+        $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+        
+        
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+        
+        
+        
+        $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+        
+        $.HSCore.components.HSFileAttach.init('.js-custom-file-attach');
+        
+        
+        
+        
+        
+        $.HSCore.components.HSFocusState.init();
+        
+        
+        
+        
+        
+            
+            $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
+        
+
+        
+        $('input.yellow_data, input.red_data').click(function(){
+            let item = $(this).val();
+            $('.'+item+'_reason').toggle();
+        });
+        
+        $(".helpLink").on("click",function() {
+            let item = $(this).data("item");
+            $(".helpContentArticle").hide();
+            $("#help-" + item).show();
+        });
+        $("#set-domkey").keyup(function(){
+            
+            let currentText = $(this).val();
+
+            
+            $("#domkey-wrap").text(currentText);
+        });
+        $("#dombox-domain").keyup(function(){
+            
+            let currentText = $(this).val();
+
+            
+            $("#dombox-domain-wrap").text(currentText);
+        });
+    });
+</script>
+</body>
+</html>
+

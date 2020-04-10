@@ -1,0 +1,852 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <title>Dombox - Proposal - SMTP Over TLS on Port 26</title>
+
+    
+    <link rel="shortcut icon" href="http://domboxxmail.com/favicon.ico">
+
+    
+    <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+    
+    <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+
+    
+    
+    
+    
+    
+    
+    
+
+    <link rel="stylesheet" href="../assets/css/dombox.min.css">
+    <link rel="stylesheet" href="../assets/css/misc.css">
+    
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121619257-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-121619257-2');
+    </script>
+    
+</head>
+
+<body>
+
+
+<div class="bg-soft-primary">
+    <div class="container">
+        <div class="p-2 text-center">
+            <span class="btn btn-xs btn-soft-danger font-weight-semi-bold rounded mr-2">Important Notice</span> Apple copied our product as "Sign in with Apple" and putting millions of developers at risk. <a href="../news/apple-copied-our-product.html">Learn More.</a>
+        </div>
+    </div>
+</div>
+
+
+<header id="header" class="u-header u-header-left-aligned-nav ">
+    <div class="u-header__section">
+        <div id="logoAndNav" class="container">
+            
+            <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+
+                <ul class="navbar-nav u-header__navbar-nav" style="width: auto">
+
+                    
+                    <li class="nav-item u-header__nav-item">
+                        <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="../index.html">
+                            <img style="margin-right: 0;max-height: 55px;" src="../assets/images/logo.png">
+                        </a>
+                    </li>
+                    
+
+                </ul>
+                
+                <button type="button" class="navbar-toggler btn u-hamburger"
+                        aria-label="Toggle navigation"
+                        aria-expanded="false"
+                        aria-controls="navBar"
+                        data-toggle="collapse"
+                        data-target="#navBar">
+          <span id="hamburgerTrigger" class="u-hamburger__box">
+            <span class="u-hamburger__inner"></span>
+          </span>
+                </button>
+                
+
+                
+                <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                    <ul class="navbar-nav u-header__navbar-nav">
+
+                    
+                        
+                        <li class="nav-item u-header__nav-item dbx-header-item nav-second-item">
+                            
+                                
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item u-header__nav-item dbx-header-item ">
+                            <a class="nav-link u-header__nav-link" href="../features.html">Features</a>
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="productsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="productsSubMenu">Products</a>
+
+                            
+                            <ul id="productsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="productsMegaMenu" style="min-width: 230px;">
+
+                                <li class="hs-has-sub-menu " style="padding-bottom: 10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/signin.html">Sign In with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/subscribe.html">Subscribe with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/contract.html">Contract with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/pre-signup.html">Pre-Signup with Dombox</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../products/generate.html">Generate with Dombox</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="solutionsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="solutionsSubMenu">Solutions</a>
+
+                            
+                            <ul id="solutionsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="solutionsMegaMenu" style="min-width: 330px;">
+
+                                <li class="hs-has-sub-menu " style="padding-bottom: 10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/sad.html">Sender Alias Domains (SAD)</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/rtav.html">Real-Time Address Verification (RTAV)</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding: 10px 0;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/cea.html">Conversational Email Address (CEA)</a>
+                                </li>
+
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../solutions/mst.html">Mail Score for Transparency (MST)</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="proposalsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="proposalsSubMenu">Proposals</a>
+
+                            
+                            <ul id="proposalsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="proposalsMegaMenu" style="min-width: 230px;">
+
+                                <li class="hs-has-sub-menu x-nav-active" style="padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="smtps.html">SMTP Over TLS on Port 26</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="articlesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="articlesSubMenu">Articles</a>
+
+                            
+                            <ul id="articlesSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="articlesMegaMenu" style="min-width: 260px;">
+
+                                <li class="hs-has-sub-menu " style="padding-bottom:10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../articles/layers.html">Dombox Layers</a>
+                                </li>
+                                <li class="hs-has-sub-menu " style="padding-top:10px;padding-bottom:10px;border-bottom: 1px solid #e7eaf3;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../articles/privacy.html">Internet Privacy</a>
+                                </li>
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../articles/ports.html">SMTP Ports (25 vs 587 vs 465)</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                            data-event="hover"
+                            data-animation-in="slideInUp"
+                            data-animation-out="fadeOut">
+                            <a id="newsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="newsSubMenu">News</a>
+
+                            
+                            <ul id="newsSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="newsMegaMenu" style="min-width: 250px;">
+
+                                <li class="hs-has-sub-menu " style="padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="nav-link u-header__sub-menu-nav-link" href="../news/apple-copied-our-product.html">Apple copied our Product</a>
+                                </li>
+
+                            </ul>
+                            
+                        </li>
+                        
+
+                        
+                        
+                            
+                        
+                        
+                    
+
+                    
+                        
+                        
+                            
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                                
+                            
+                        
+                        
+                        
+                        <li class="nav-item u-header__nav-item ml-2">
+                            <a class="btn btn-sm btn-primary transition-3d-hover" href="../signup.html">
+                                
+                                Pre-SignUp
+                            </a>
+                        </li>
+                        
+                    
+                    </ul>
+                </div>
+                
+            </nav>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+<div class="bg-primary d-none d-xl-block">
+    <div class="container">
+        <div class="row">
+            <div id="subNavBar" class="navbar sub-navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                <ul class="navbar-nav align-items-md-center u-header__navbar-nav">
+                    <li class="nav-item u-header__nav-item  home-nav">
+                        <a class="nav-link u-header__nav-link" href="../index.html"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/signin.html">Sign In with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/subscribe.html">Subscribe with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/contract.html">Contract with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/pre-signup.html">Pre-SignUp with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item ">
+                        <a class="nav-link u-header__nav-link" href="../products/generate.html">Generate with Dombox</a>
+                    </li>
+                    <li class="nav-item u-header__nav-item">
+                        <a class="nav-link u-header__nav-link" style="padding-top: 1.1rem;padding-bottom: 0.9rem;" href="../index.html"><i class="far fa-arrow-alt-circle-right" style="font-size: 20px"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<a class="js-go-to u-go-to" href="smtps.html#"
+   data-position='{"bottom": 15, "right": 15 }'
+   data-type="fixed"
+   data-offset-top="400"
+   data-compensation="#header"
+   data-show-effect="slideInUp"
+   data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+</a>
+
+
+<main id="content" role="main">
+    <div class="container space-top-2 space-bottom-1">
+        <div class="row">
+            <div id="stickyBlockStartPoint" class="col-md-4 col-lg-3 mb-7 mb-md-0">
+                
+                <nav class="js-sticky-block card shadow-sm p-4"
+                     data-parent="#stickyBlockStartPoint"
+                     data-sticky-view="md"
+                     data-start-point="#stickyBlockStartPoint"
+                     data-end-point="#stickyBlockEndPoint"
+                     data-offset-top="24"
+                     data-offset-bottom="24">
+                    <ul class="js-scroll-nav list-group list-group-transparent list-group-flush list-group-borderless">
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#overview">Overview</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#proposal">Proposal</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#proposal-1-starttls-prefix">STARTTLS Prefix</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#proposal-2-smtps-prefix">SMTPS Prefix</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#iana-considerations">IANA Considerations</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#certificate-validation">Certificate Validation</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#smtps-https">SMTPS ≠ HTTPS</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#migration">Migration</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#internationalized-domain-names">IDN</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#conclusion">Conclusion</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#security-considerations">Security Considerations</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action font-weight-medium mb-2" href="smtps.html#related-projects">Related Projects</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+            <div class="col-md-8 col-lg-9" style="font-size: 18px">
+
+                <div id="overview">
+                    <div class="border-bottom pb-3 mb-4">
+                        <h1 class="text-primary"><span class="font-weight-semi-bold">Proposal:</span> SMTP Over TLS on Port 26</h1>
+                        <div class="alert alert-primary" role="alert">
+                            This proposal is written for the tech audience to gather feedback. If you are new to SMTP, you might wanna <a href="../articles/ports.html">read our article</a> first, which explains the concept STRIPTLS attack and explains
+                            the difference between SMTP Ports (25 vs 587 vs 465).
+                        </div>
+                        <p>SMTP is still suffering from downgrade attacks like STRIPTLS. While we have “Opportunistic TLS”, we still don’t have “Implicit TLS” in the SMTP. Just to be clear, we do have “Implicit TLS” for “SMTP Submission” on port 465. But we don’t have a secure port 25 alternative. i.e. The real SMTPS.</p>
+                        <p>Both MTA-STS and DANE tries to fix the STARTTLS downgrade issue. However the implementation is not simple. The former requires a HTTPS server and the latter requires TLSA dns record support.</p>
+                        <p>This proposal fixes STARTTLS downgrade issue and propose a new port 26, an “Implicit TLS” alternative for port 25 and recommends the MX server to signal the port via a prefix.</p>
+                    </div>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="proposal">Proposal</h2>
+                    <p>20 years back “Opportunistic TLS” was introduced instead of “Implicit TLS”. That's because there was no way for a server to “signal” the port 465 existence. Actually there was a way (Prefix). But they missed that.</p>
+                    <p>Port 465 was discontinued in the late 90’s and then reassigned to “submissions” in 2018.</p>
+                    <p>This proposal offers two ways.</p>
+
+                    <h3 id="proposal-1-starttls-prefix">1. STARTTLS Prefix</h3>
+                    <p>Use this prefix on your MX records only to deal with STARTTLS downgrade issue.</p>
+                    <p>e.g. mx1.example.com should be prefixed like starttls-mx1.example.com.</p>
+                    <p>Where “starttls-” says “Our port 25 supports Opportunistic TLS. So if STARTTLS command not found in the EHLO response or certificate is invalid, then drop the connection”.</p>
+                    <p>Example:</p>
+                    <p>ACME, Inc. has the following MX servers.</p>
+                    <div class="highlight">
+                        <pre style="margin-bottom: 0"><code>mx1.acme.com
+mx2.acme.com
+mx3.acme.com
+mx4.acme.com
+mx5.acme.com</code></pre></div>
+                    <p>They all should be prefixed like this if they support STARTTLS on port 25.</p>
+                    <div class="highlight">
+                        <pre style="margin-bottom: 0"><code>starttls-mx1.acme.com
+starttls-mx2.acme.com
+starttls-mx3.acme.com
+starttls-mx4.acme.com
+starttls-mx5.acme.com</code></pre></div>
+                    <p>Now ACME, Inc. need to protect those records via DNSSEC since DNS responses can be modified.</p>
+                    <p>If ACME, Inc. use a third party mail hosting services like Google G-Suite, Google MX servers will begin with “starttls-” prefix. However acme.com still need to protect their DNS via DNSSEC.</p>
+
+                    <h3 id="proposal-2-smtps-prefix">2. SMTPS Prefix</h3>
+                    <p>Use this prefix on your MX records if you wanna support both Implicit TLS on port 26 and Opportunistic TLS on port 25.</p>
+                    <p>e.g. mx1.example.com should be prefixed like smtps-mx1.example.com.</p>
+                    <p>Where “smtps-” says “We prefer if you connect to our SMTPS in port 26. But we also accept mails in port 25. And our port 25 supports Opportunistic TLS. So if STARTTLS command not found in the EHLO response or certificate is invalid, then drop the connection”.</p>
+                    <p>In “starttls-” prefix, port 25 <b>MUST</b> support encryption with <b>Valid SSL</b> certificates.</p>
+                    <p>In “smtps-” prefix, <b>BOTH</b> port 26 and port 25 <b>MUST</b> support encryption with <b>Valid SSL</b> certificates.</p>
+                    <p>So now SMTP clients can check for whether MX server starts with the string “smtps”. If it starts with that string, then the clients gonna connect to port 26 (smtps). A normal client that doesn’t know what “smtps” stands for gonna connect to port 25 as usual.</p>
+
+                    <p>Final Result:</p>
+                    <div class="highlight">
+<pre style="margin-bottom: 0"><code>| Port            | 25        | 26        | 587        | 465         |
+| --------------- | --------- | --------- | ---------- | ----------- |
+| Service Name    | smtp      | smtps     | submission | submissions |
+| Protocol Name   | SMTP      | SMTPS     | Submission | SubmissionS |
+| Auth Required?  | No        | No        | Yes        | Yes         |
+| Implicit TLS?   | No        | Yes       | No         | Yes         |
+| Plain Text?     | Yes       | No        | Yes        | No          |
+| Discovery?      | MX Record | MX Record | Direct     | Direct      |
+| Public?         | Yes       | Yes       | No         | No          |
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="iana-considerations">IANA Considerations</h2>
+                    <h3 id="service-name">Service Name</h3>
+                    <p>Let’s give a service name for IANA identification. Obviously it’s “smtps”.</p>
+                    <p>IANA Service Name: smtps</p>
+                    <h3 id="port">Port</h3>
+                    <p>Port 26 is <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?&page=1">unassigned</a>. And it’s very adjacent to port 25. So let’s use port 26.</p>
+                    <p>IANA Recommended Port: 26</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="certificate-validation">Certificate Validation</h2>
+                    <p>The whole point of SMTPS (port 26) is about security. Clients should treat SMTPS as it treat HTTPS. So when the certificate is invalid, clients should drop the connection rather than proceeding with invalid certificates.</p>
+                    <p>Mail server admins must make sure that they have valid SSL certificates on port 26 before naming their MX servers with “smtps” prefix.</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="smtps-https">SMTPS ≠ HTTPS</h2>
+                    <p>In HTTPS, you have url like this. https://www.google.com</p>
+                    <p>That says the following two things.</p>
+                    <p>Protocol: HTTPS</p>
+                    <p>Domain: www.google.com</p>
+                    <p>If the certificate presented by the server, doesn’t match the domain, then the certificate is INVALID. End of story.</p>
+                    <hr>
+                    <p>In SMTPS, you have an email address john@acme.com</p>
+                    <p>Original Domain: acme.com</p>
+                    <p>The MX record says, smtps-aspmx.l.google.com</p>
+                    <p>Protocol: SMTPS</p>
+                    <p>Delivery Server Domain: google.com</p>
+                    <p>Since MX records can point to any domain, SSL certificates cannot be trusted here.</p>
+                    <p>For example, what if some attacker, change the MX response from smtps-aspmx.l.google.com to smtps-mx1.attacker.com</p>
+                    <p>Now, you are delivering your mails to the attacker.com domain instead of google.com domain.</p>
+                    <p>If you don’t want your DNS responses to be spoofed, then you MUST enable DNSSEC for your domain.</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="migration">Migration</h2>
+                    <p><strong>Self-Hosted</strong></p>
+                    <p>This example assumes that your domain name is example.com and your mail servers are mx1.example.com, mx2.example.com, mx3.example.com, mx4.example.com and mx5.example.com</p>
+                    <p>Step 1: Serve SMTPS mail server on port 26 and make sure to port 25 supports “Opportunistic TLS”.</p>
+                    <p>Note: Both port 25 and 26 must have valid SSL certificates.</p>
+                    <p>Step 2: Update firewall rules</p>
+                    <p>Step 3: Add new hostnames with the same IP addresses</p>
+                    <div class="highlight">
+                        <pre style="margin-bottom: 0"><code>; mail domain
+example.com.              MX      5 mx1.example.com.
+example.com.              MX     10 mx2.example.com.
+example.com.              MX     20 mx3.example.com.
+example.com.              MX     20 mx4.example.com.
+example.com.              MX     40 mx5.example.com.
+
+; SMTP server host names (Old)
+mx1.example.com.          A     192.0.2.1
+mx2.example.com.          A     192.0.2.2
+mx3.example.com.          A     192.0.2.3
+mx4.example.com.          A     192.0.2.4
+mx5.example.com.          A     192.0.2.5
+
+; SMTP server host names (New)
+smtps-mx1.example.com.   A     192.0.2.1
+smtps-mx2.example.com.   A     192.0.2.2
+smtps-mx3.example.com.   A     192.0.2.3
+smtps-mx4.example.com.   A     192.0.2.4
+smtps-mx5.example.com.   A     192.0.2.5
+                        </code></pre></div>
+                    <p>Note: I excluded AAAA records for simplicity. If you have AAAA records, don’t forget to duplicate that too.</p>
+                    <p>Step 4: Update MX records</p>
+                    <div class="highlight">
+                        <pre style="margin-bottom: 0"><code>; mail domain
+example.com.        MX      5 smtps-mx1.example.com.
+example.com.        MX     10 smtps-mx2.example.com.
+example.com.        MX     20 smtps-mx3.example.com.
+example.com.        MX     20 smtps-mx4.example.com.
+example.com.        MX     40 smtps-mx5.example.com.
+                        </code></pre></div>
+
+                    <p>Step 5: Wait for DNS propagation (Wait time depends on your TTL value). Use tools like whatsmydns to check propagation.</p>
+                    <p>e.g. <a href="https://www.whatsmydns.net/#MX/gmail.com">https://www.whatsmydns.net/#MX/gmail.com</a></p>
+                    <p>Step 6: Remove “SMTP server host names (Old)” once DNS propagated.</p>
+                    <p><strong>Third-Party Hosted</strong></p>
+                    <p>Third-Party mail servers are more like “Software Distributors”. Instead of distributing the “softwares”, they distributed “MX records”. e.g. Google Apps aka. G Suite</p>
+                    <p>Millions of domains depend on the MX records. So third-party mail servers need to main two versions of MX Records for some years.</p>
+                    <p>The following example uses example.net as third party mail hosting provider.</p>
+                    <p>Third party mail servers should work on both cases.</p>
+                    <div class="highlight">
+                        <pre style="margin-bottom: 0"><code>; mail domain
+example.com.        MX      5 mx1.example.net.
+example.com.        MX     10 mx2.example.net.
+example.com.        MX     20 mx3.example.net.
+example.com.        MX     20 mx4.example.net.
+example.com.        MX     40 mx5.example.net.
+
+; mail domain
+example.com.        MX      5 smtps-mx1.example.net.
+example.com.        MX     10 smtps-mx2.example.net.
+example.com.        MX     20 smtps-mx3.example.net.
+example.com.        MX     20 smtps-mx4.example.net.
+example.com.        MX     40 smtps-mx5.example.net.
+                        </code></pre></div>
+                    <p>Third party mail servers should encourage their customers to update the MX records with the new version for better security.</p>
+                    <p>They should gracefully degrade the older version of MX record. e.g. They should notify their customers via email saying old version will not work after X years.</p>
+                    <p>When the grace period is over, third party mail hosting providers should fetch the MX record from their customers domain and warn them if they still use the older version.</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="internationalized-domain-names">Internationalized Domain Names</h2>
+                    <p>IDN converts non ASCII characters to ASCII characters.</p>
+                    <p>Tested on: <a href="https://www.punycoder.com/">https://www.punycoder.com/</a></p>
+                    <p><strong>Input</strong></p>
+                    <div class="highlight">
+                        <p>smtps-افغانستا.afghanistan.com<br>smtps-الجزائر.algeria.com<br>smtps-österreich.austria.com<br>smtps-বাংলাদেশ.bangladesh.com<br>smtps-беларусь.belarus.com<br>smtps-belgië.belgium.com<br>smtps-българия.bulgaria.com<br>smtps-تشادر.chad.com<br>smtps-中国.china.com<br>smtps-القمر.comoros.com<br>smtps-κυπρος.cyprus.com<br>smtps-českárepublika.czech-republic.com<br>smtps-مصر.egypt.com<br>smtps-ελλάδα.greece.com<br>smtps-magyarország.hungary.com<br>smtps-ísland.iceland.com<br>smtps-भारत.india.com<br>smtps-ايران.iran.com<br>smtps-éire.ireland.com<br>smtps-איקו״ם.israel.com<br>smtps-日本.japan.com<br>smtps-الأردن.jordan.com<br>smtps-қазақстан.kazakhstan.com<br>smtps-한국.korea.com<br>smtps-кыргызстан.kyrgyzstan.com<br>smtps-ລາວ.laos.com<br>smtps-لبنان.lebanon.com<br>smtps-македонија.macedonia.com<br>smtps-موريتانيا.mauritania.com<br>smtps-méxico.mexico.com<br>smtps-монголулс.mongolia.com<br>smtps-المغرب.morocco.com<br>smtps-नेपाल.nepal.com<br>smtps-عمان.oman.com<br>smtps-قطر.qatar.com<br>smtps-românia.romania.com<br>smtps-россия.russia.com<br>smtps-србијаицрнагора.serbia-montenegro.com<br>smtps-இலங்கை.sri-lanka.com<br>smtps-españa.spain.com<br>smtps-ไทย.thailand.com<br>smtps-تونس.tunisia.com<br>smtps-türkiye.turkey.com<br>smtps-украина.ukraine.com<br>smtps-việtnam.vietnam.com</p>
+                    </div>
+                    <p><strong>Output</strong></p>
+                    <div class="highlight">
+                        <p>xn--smtps--ujiaa3a2hwd7d6c.afghanistan.com<br>xn--smtps--njiha3c3cj6u.algeria.com<br>xn--smtps-sterreich-etb.austria.com<br>xn--smtps--ngnwtxb5c3b1fc1k.bangladesh.com<br>xn--smtps--8nfh0bydycmz1k.belarus.com<br>xn--smtps-belgi-9bb.belgium.com<br>xn--smtps--8nfhs5c4a6d4g5c.bulgaria.com<br>xn--smtps--ujix0cu4a.chad.com<br>xn--smtps--gw7is51d.china.com<br>xn--smtps--uji4fthtam.comoros.com<br>xn--smtps--nze4bikxu.cyprus.com<br>xn--smtps-eskrepublika-6rb09f.czech-republic.com<br>xn--smtps--uli5a7l.egypt.com<br>xn--smtps--uwe4b0ai0ea.greece.com<br>xn--smtps-magyarorszg-mpb.hungary.com<br>xn--smtps-sland-tcb.iceland.com<br>xn--smtps--uwm3d1a3l.india.com<br>xn--smtps--ujia3g5job.iran.com<br>xn--smtps-ire-g4a.ireland.com<br>xn--smtps--g1h4b9a4b4g5g.israel.com<br>xn--smtps--ul2mm8f.japan.com<br>xn--smtps--1ii5a7eta1s1a.jordan.com<br>xn--smtps--8nfaa2e8c3bn55jda.kazakhstan.com<br>xn--smtps--876wx05u.korea.com<br>xn--smtps--8nfx0b2a0b6apo4kc.kyrgyzstan.com<br>xn--smtps--nyuq2h.laos.com<br>xn--smtps--ujih5wvab.lebanon.com<br>xn--smtps--8nfa9aj8avyso23b.macedonia.com<br>xn--smtps--ujiaz3e6lpaw3ad.mauritania.com<br>xn--smtps-mxico-hbb.mexico.com<br>xn--smtps--uof8dahllc8b2a.mongolia.com<br>xn--smtps--ujii4f6d3em.morocco.com<br>xn--smtps--nxmq6e3f5d.nepal.com<br>xn--smtps--uji7lmel.oman.com<br>xn--smtps--uli1c2f.qatar.com<br>xn--smtps-romnia-xbb.romania.com<br>xn--smtps--upf1crla3o.russia.com<br>xn--smtps--8nfaahy1db4eryeei9hsr.serbia-montenegro.com<br>xn--smtps--1eq6f9a3uui4b.sri-lanka.com<br>xn--smtps-espaa-beb.spain.com<br>xn--smtps--84t8dyo.thailand.com<br>xn--smtps--gki6e0ita.tunisia.com<br>xn--smtps-trkiye-jlb.turkey.com<br>xn--smtps--8nfa5esa9a7a0b.ukraine.com<br>xn--smtps-vitnam-gj6f.vietnam.com</p>
+                    </div>
+                    <p>So clients should look for prefixes like</p>
+                    <p>“smtps-”, “starttls-”, “xn — smtps-” “xn — starttls-”</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>In HTTPS, you prepend the “https” in the URL like https://www.google.com to signal the port 443 existence.</p>
+                    <p>In this proposal you are doing the same thing with “smtps-” and “starttls-” prefixes.</p>
+                    <p>https://www.google.com =&gt; www.google.com:443</p>
+                    <p>smtps-mx1.example.net =&gt; smtps-mx1.example.net:26</p>
+                    <p>starttls-mx1.example.net =&gt; starttls-mx1.example.net:25</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="security-considerations">Security Considerations</h2>
+                    <p>DNS Query responses are prone to forgery. So protect your DNS entries with the help of DNSSEC.</p>
+                    <p>Port 26 will be a secure alternative for Port 25. So Internet Service Providers are advised to take precautions to prevent email spam abuse. They are advised to block port 26, if necessary.</p>
+                </div>
+
+                <div class="border-bottom pb-3 mb-4">
+                    <h2 id="related-projects">Related Projects</h2>
+                    <p><a href="https://tools.ietf.org/html/rfc8461">MTA-STS</a> — Requires additional TXT record and a HTTPS server</p>
+                    <p><a href="https://tools.ietf.org/html/rfc7672">DANE</a> — Requires DNSSEC and TLSA records.</p>
+                    <p><a href="https://datatracker.ietf.org/doc/draft-ietf-uta-smtp-require-tls/">SMTP Require TLS</a> — Introduces SMTP service extension, REQUIRETLS, and message header field, RequireTLS.</p>
+                </div>
+
+            
+
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="display: flex; justify-content: center; ">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_email"></a>
+    <a class="a2a_button_reddit"></a>
+    <a class="a2a_button_whatsapp"></a>
+    <a class="a2a_button_linkedin"></a>
+    <a class="a2a_button_hacker_news"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="stickyBlockEndPoint"></div>
+</main>
+
+
+
+
+<footer id="SVGwave7BottomShape" class="svg-preloader position-relative border-top">
+    
+    <div class="container space-2">
+        <div class="text-center">
+            
+            <a class="d-inline-flex align-items-center mb-5" href="../index.html" aria-label="Dombox">
+                <img style="max-height: 55px;" src="../assets/images/logo.png">
+            </a>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 col-lg-6 mb-7 mb-sm-0">
+                <div class="mb-4">
+                    <h3>Dombox is... <br><strong class="text-primary">Isolated</strong> and <strong class="text-primary">Privacy-Focused</strong> </h3>
+                </div>
+                <a class="btn btn-primary btn-sm transition-3d-hover" href="../signup.html">
+                    
+                    Pre-SignUp
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-lg-2 mb-4 mb-sm-0 ml-lg-auto">
+                <h4 class="h6 font-weight-semi-bold">Products</h4>
+
+                
+                <ul class="list-group list-group-flush list-group-borderless mb-0">
+                    <li><a class="list-group-item list-group-item-action" href="../products/signin.html">Sign in</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../products/subscribe.html">Subscribe</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../products/contract.html">Contract</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="col-sm-3 col-lg-2 mb-4 mb-sm-0 ml-lg-auto">
+                <h4 class="h6 font-weight-semi-bold">Solutions</h4>
+
+                
+                <ul class="list-group list-group-flush list-group-borderless mb-0">
+                    <li><a class="list-group-item list-group-item-action" href="../solutions/sad.html">SAD</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../solutions/rtav.html">RTAV</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../solutions/cea.html">CEA</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="col-sm-3 col-lg-2">
+                <h4 class="h6 font-weight-semi-bold">Resources</h4>
+
+                
+                <ul class="list-group list-group-flush list-group-borderless mb-0">
+                    <li><a class="list-group-item list-group-item-action" href="mailto:support@dombox.org">Contact</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../terms.html">Terms</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="../privacy.html">Privacy</a></li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="container space-1">
+        <div class="row justify-content-end">
+            <div class="col-md-5 text-right">
+                <p class="small mb-0">&copy; 2020 Dombox. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <figure class="ie-wave-7-bottom w-80 w-md-65 w-lg-50 position-absolute bottom-0 left-0 z-index-n1">
+        <img class="js-svg-injector" src="../assets/svg/components/wave-7-bottom.svg" alt=""
+             data-parent="#SVGwave7BottomShape">
+    </figure>
+    
+</footer>
+
+
+
+
+<script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+<script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src="../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+<script src="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../assets/js/hs.core.js"></script>
+<script src="../assets/js/components/hs.header.js"></script>
+<script src="../assets/js/components/hs.unfold.js"></script>
+<script src="../assets/js/components/hs.svg-injector.js"></script>
+<script src="../assets/js/components/hs.malihu-scrollbar.js"></script>
+
+
+<script src="../assets/js/components/hs.go-to.js"></script>
+
+
+<script src="../assets/js/components/hs.show-animation.js"></script>
+<script src="../assets/js/components/hs.scroll-nav.js"></script>
+<script src="../assets/js/components/hs.file-attach.js"></script>
+
+
+
+
+
+
+<script src="../assets/js/components/hs.focus-state.js"></script>
+
+
+
+
+
+
+
+
+<script src="../assets/js/components/hs.sticky-block.js"></script>
+
+
+
+<script>
+    $(window).on('load', function () {
+        
+        $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            pageContainer: $('.container'),
+            breakpoint: 767.98,
+            hideTimeOut: 300
+        });
+
+
+        
+        $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+
+        
+        $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+            duration: 700
+        });
+        
+    });
+
+    $(document).on('ready', function () {
+        
+        $.HSCore.components.HSHeader.init($('#header'));
+        
+        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+            afterOpen: function () {
+                $(this).find('input[type="search"]').focus();
+            }
+        });
+
+        
+        $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+        
+        
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+        
+        
+        
+        $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+        
+        $.HSCore.components.HSFileAttach.init('.js-custom-file-attach');
+        
+        
+        
+        
+        
+        $.HSCore.components.HSFocusState.init();
+        
+        
+        
+        
+        
+            
+            $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
+        
+
+        
+        $('input.yellow_data, input.red_data').click(function(){
+            let item = $(this).val();
+            $('.'+item+'_reason').toggle();
+        });
+        
+        $(".helpLink").on("click",function() {
+            let item = $(this).data("item");
+            $(".helpContentArticle").hide();
+            $("#help-" + item).show();
+        });
+        $("#set-domkey").keyup(function(){
+            
+            let currentText = $(this).val();
+
+            
+            $("#domkey-wrap").text(currentText);
+        });
+        $("#dombox-domain").keyup(function(){
+            
+            let currentText = $(this).val();
+
+            
+            $("#dombox-domain-wrap").text(currentText);
+        });
+    });
+</script>
+</body>
+</html>
+
