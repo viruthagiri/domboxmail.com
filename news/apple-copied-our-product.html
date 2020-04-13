@@ -1067,24 +1067,37 @@
                     </div>
                     <p>If you are a developer, there is a higher chance "a system-provided javascript API" part may sound odd to you. That text is added there to justify their case. </p>
                     <p>Let's go back to the prior art. The "domain policy list" in the prior art is provided for preventing fake "mobile" apps. That means, the scope is limited to the "mobile platform". But, Apple wants the "Sign in with Apple" to be cross-platform. Especially they want "Sign in with Apple" to be accessible on the web. </p>
-                    <p>My white paper heavily uses "web platform" as example for describing my entire invention. Apple is looking for "gaps" here. So their lawyers can throw bunch of nonsense arguments in court.</p>
-                    <div class="rounded mb-3 text-center">
-                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/spapi2.png" >
-                    </div>
-                    <p>Javascript is one of the most popular programming language. Apple's argument here is, their client library "Sign in with Apple JS" is not provided by Apple. It's provided by their system. Hence they are entitled to copy my work for websites and other platforms.</p>
-                    <p>The primary reason they are betting on "Sign in with Apple JS" is due to a big misunderstanding. When Apple released their product in June 2019, they had access to only my published white paper. The provisional application I filed before publishing my white paper actually had more content. It was not public.</p>
+                    <p>My white paper heavily uses "web platform" as example for describing my entire invention. Apple is looking for "gaps" here to copy my work.</p>
+
+                    <p>The primary reason they are betting on "Sign in with Apple JS" is because they missed a key point. When Apple released their product in June 2019, they had access to only my published white paper. The provisional application I filed before publishing my white paper actually had more content. It was not public at that time.</p>
                     <p>The following part is the primary reason why Apple betting on "Sign in with Apple JS".</p>
                     <div class="rounded mb-3 text-center">
                         <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/spapi3.png" >
                     </div>
-                    <p>Apple's argument is, "javascript-based" client library is not covered in that part.</p>
-                    <p>But that part was covered little differently in the provisional application I filed before publishing my white paper.</p>
+                    <p>Apple thought I didn't cover the "javascript-based" part in my invention. But I actually covered that part in the provisional application I filed before publishing my white paper.</p>
                     <div class="rounded mb-3 text-center">
                         <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/82prior.jpg" >
                     </div>
 
-                    <p>Also note that, one more aspect of my work utilises what they call "system-provided javascript API" and it is associated with dombox addresses [i.e. All my inventive steps Apple trying to copy]. So "javascript-based" client is well covered in my provisional application. These two screenshots were taken from the provisional application I filed on Feb 14, 2020. [<a
-                            target="_blank" href="../assets/images/apple/pro108.jpg">Screenshot 1</a>] [<a target="_blank" href="../assets/images/apple/pro109.jpg">Screenshot 2</a>]</p>
+                    <p>This is the transcript Apple gave to <a target="_blank" href="https://techcrunch.com/2019/06/07/answers-to-your-burning-questions-about-how-sign-in-with-apple-works/">Techcrunch</a> in June 2019. [Pay attention to the "JavaScript-based" part.]</p>
+                    <blockquote>
+                        <p><strong>4) But what about Android? What about web apps? I use my apps everywhere!</strong></p>
+                        <p>There&#8217;s a solution, but it&#8217;s not quite as seamless.</p>
+                        <p>If a user signs up for an app on their Apple device &#8212; like, say, their iPad &#8212; then wants to use the app on a non-Apple device, like their Android phone, they&#8217;re sent over to a web view.</p>
+                        <p>Here, they&#8217;ll see a Sign in with Apple login screen where they&#8217;ll enter their Apple ID and password to complete the sign in. This would also be the case for <a href="https://developer.apple.com/documentation/signinwithapplejs/configuring_your_webpage_for_sign_in_with_apple">web apps</a> that need to offer the Sign in with Apple login option.</p>
+                        <p><strong></strong>This option is called <a href="https://developer.apple.com/documentation/signinwithapplejs">Sign in with Apple JS</a> as it&#8217;s <strong>JavaScript-based</strong>.</p>
+                        <p>(Apple does not offer a native SDK for Android developers, and honestly, it&#8217;s not likely to do so any time soon.)</p>
+                    </blockquote>
+                    <p>So they changed the wording to "system-provided" after realising I protected that part. </p>
+                    <p>I would be pretty much surprised if they bring that argument and win it in court.</p>
+                    <p>That's like someone selling an iPhone by inverting the logo. It's not an "iPhone", It's an "inverted-Phone". Do you really think Apple would be okay with that?</p>
+                    <p>Also they need to overcome the following part. ["We" refers to the "Identity-Provider"]</p>
+                    <div class="rounded mb-3 text-center">
+                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/spapi2.png" >
+                    </div>
+                    <p>The following are some of the notable companies that displays "Sign in with Apple" on their website login/signup pages by trusting Apple. i.e. These companies are violating my IP. </p>
+                    <p><a target="_blank" href="https://www.adobe.com/">Adobe</a>, <a target="_blank" href="https://www.dropbox.com/login">Dropbox</a>, <a target="_blank" href="https://www.airbnb.com/">Airbnb</a>, <a target="_blank" href="https://www.airbnb.com/">Airbnb</a>, <a target="_blank" href="https://medium.com/">Medium</a>, <a target="_blank" href="https://www.spotify.com/us/">Spotify</a>, <a target="_blank" href="https://wordpress.com/">WordPress</a>, <a target="_blank" href="https://vimeo.com/">Vimeo</a>, <a target="_blank" href="https://www.meetup.com/">Meetup</a>, <a target="_blank" href="https://www.buzzfeed.com/">Buzzfeed</a>, <a target="_blank" href="https://www.grammarly.com/">Grammerly</a> </p>
+                    <p>Note: Those companies are needle in a haystack. Plenty of websites out there supports "Sign in with Apple".</p>
 
                     <h2 class="mt-5 pt-3 border-top" id="oauth2-support">OAuth2 Support</h2>
                     <p>To quote <a target="_blank" href="https://dev.to/costerad/sign-in-with-apple-implementation-hurdles-761">this page</a>,</p>
@@ -1116,14 +1129,9 @@
                     <div class="rounded mb-3 text-center">
                         <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/swjs3.png" >
                     </div>
-                    <p>Techcrunch <a target="_blank" href="https://techcrunch.com/2019/06/07/answers-to-your-burning-questions-about-how-sign-in-with-apple-works/">answered this question</a> more clearly. [Most likely Apple provided the transcript]</p>
+                    <p>Also refer the Techcrunch answer I linked.</p>
                     <blockquote>
-                        <p><strong>4) But what about Android? What about web apps? I use my apps everywhere!</strong></p>
-                        <p>There&#8217;s a solution, but it&#8217;s not quite as seamless.</p>
-                        <p>If a user signs up for an app on their Apple device &#8212; like, say, their iPad &#8212; then wants to use the app on a non-Apple device, like their Android phone, they&#8217;re sent over to a web view.</p>
-                        <p>Here, they&#8217;ll see a Sign in with Apple login screen where they&#8217;ll enter their Apple ID and password to complete the sign in. This would also be the case for <a href="https://developer.apple.com/documentation/signinwithapplejs/configuring_your_webpage_for_sign_in_with_apple">web apps</a> that need to offer the Sign in with Apple login option.</p>
-                        <p>This option is called <a href="https://developer.apple.com/documentation/signinwithapplejs">Sign in with Apple JS</a> as it&#8217;s JavaScript-based.</p>
-                        <p>(Apple does not offer a native SDK for Android developers, and honestly, it&#8217;s not likely to do so any time soon.)</p>
+                        <p>(Apple does not offer a native SDK for Android developers, and honestly, it's not likely to do so any time soon.)</p>
                     </blockquote>
 
                     <h1 class="mt-5 pt-3 border-top text-center text-primary">App Store Connection</h1>
