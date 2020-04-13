@@ -653,10 +653,8 @@
         <div class="border-bottom pb-3 mb-4">
         <h1 id="real" class="text-primary mb-4 text-center" style="line-height: 1.3;">What is the real invention?</h1>
         <p>To understand what Apple is copying, you need to understand the real invention.</p>
-        <p>When I started my research in 2013, I only wanted to find a way to address email spam issues without relying on spam filters. But ideas begets ideas. My solution showed me a way to address privacy issues. That's what Apple copying now.</p>
-        <p>So how did I solve the spam problem without relying on spam filers?</p>
-        <p>Here is the answer. </p>
-        <p>Let's split the mail system into two systems. (1) Domboxes (2) Mailboxes</p>
+        <p>When I started my research in 2013, I only wanted to find a way to address email spam issues without relying on spam filters. But along the way, I found a way to address privacy issues too. So Apple copying only the "intermediate" part of my system.</p>
+        <p>This is how my real system works.</p>
         </div>
 
         <div class="border-bottom pb-3 mb-4">
@@ -772,48 +770,10 @@
 
         <h1 class="text-primary mb-4 text-center" style="line-height: 1.3;">Spam Solution</h1>
         <div class="border-bottom pb-3 mb-4">
-            <h2 id="universal-mechanism">The problem</h2>
-            <p>We rely on spam filters today. This is because we don't have any universal mechanism which can prove that the sender is whom they say they are. i.e. If the email is claiming it's from jeff@amazon.com, that's not always gonna be true.</p>
-            <p>Sender Policy Framework (SPF) is one of the mechanisms we have for email to detect email spoofing. It was introduced in 2006. In SPF, the receiving server usually compare the "Incoming mail IP address i.e. Client IP" with the whitelisted IP addresses found in the "Envelope Domain" SPF record.</p>
-            <p>For example this is the SPF record of facebook.com.</p>
-            <div class="mb-3">
-                <div class="code-toolbar">
-<pre class="language-mail" style="font-size:inherit">
-<span class="token text-danger">dig +short txt facebook.com</span>
-<span class="token string">"v=spf1 redirect=_spf.facebook.com"</span>
-<span class="token text-danger">dig +short txt _spf.facebook.com</span>
-<span class="token string">"v=spf1 ip4:66.220.144.128/25 ip4:66.220.155.0/24 ip4:66.220.157.0/25 ip4:69.63.178.128/25 ip4:69.63.181.0/24 ip4:69.63.184.0/25" " ip4:69.171.232.0/24 ip4:69.171.244.0/23 -all"</span>
-</pre>
-                </div>
-            </div>
-            <p>Facebook.com says, accept mails only from those whitelisted IP addresses when the MAIL FROM email address ending with @facebook.com</p>
-            <p>But there is one bigger problem with SPF. It's an OPTIONAL mechanism. i.e. There is no internet standard that says, a domain MUST configure SPF.</p>
-            <p>The popularity of SPF record fades away once we get past the Alexa top 1 million domains. So if we rely only on SPF record, then the solution may work for the 100th domain, but not gonna work for the 100 millionth domain.</p>
-        </div>
-
-        <div class="border-bottom pb-3 mb-4">
-            <h2 id="hot-gates">Hot Gates</h2>
-            <div class="mb-3 text-center">
-                <img class="shadow-lg img-fluid rounded-lg p-3" src="../assets/images/300.png" >
-            </div>
-            <p>Have you ever watched the Gerard Butler starred movie 300? If yes, let us ask you a question?</p>
-            <p>In that movie, King Leonidas and his soldiers battle against 300,000 persian soldiers, near a narrow pass called "Thermopylae aka. Hot Gates".</p>
-            <p>Our question is, Why Hot Gates? Why not battle in an open ground?</p>
-            <p>That's because these spartans strength not only lies on their superior fighting skills, but also lies on their tactical advantage. Without "Hot Gates", the whole battle would have been an instant massacre.</p>
-            <p>To solve the spam problem, we need such tactical advantage. To have such tactical advantage, we need to make our system deal with "conversational mails" and "non-conversational mails" separately. I invented "Domboxes" to deal with "non-conversational" mails. For "Conversational Mails", we have "Mailboxes" [See next section].</p>
-        </div>
-
-        <div class="border-bottom pb-3 mb-4">
-            <h2 id="cea">Mailboxes</h2>
-            <p>"Mailboxes" deal with "Conversational Mails". You are gonna have normal email addresses that looks like "hello@gmail.com". However only mails from "Verified Domains" will be accepted to those addresses.</p>
-            <p>Email is ubiquitous. You know what else is ubiquitous?</p>
-            <p>MX Records. They were introduced in 1986. </p>
-            <p>Today all email communications utilize MX records for transmitting mails from one domain to another.</p>
-            <p>e.g. When john@example.com sends an email to jane@gmail.com, Gmail.com MX record is queried and then mail will be transferred to one of the Gmail MX servers. When Jane reply to that mail, example.com MX record is queried and then mail will be transferred to one of the example.com MX servers. So Conversational Mails requires MX record on both sides.</p>
+            <p>We offloaded all "Non-Conversational Mails" into "Dombxoes". We deal with "Conversational Mails" via a "Conversational Email Address (CEA)".</p>
             <p>The term "Conversational Mails" can be termed as Mailbox-to-Mailbox / MX-to-MX / Human-to-Human emails.</p>
-            <p>So If we use "MX Records" as "Hot Gates", then we can solve the email spam problem.</p>
-            <p>An email address that only deals with "Conversational Mails" is called "Conversational Email Address (CEA)" in our system. There is more to it. If you need more info
-                <a target="_blank" href="../solutions/cea">visit this page</a>.</p>
+            <p>Conversational Email Address works just like a typical gmail address. i.e. It can accept mails from anyone on the internet. But it checks whether the sender is human by mainly rely on MX record checks.</p>
+            <p><b>Conversational Email Address (CEA)</b> - To lean more about Conversational Email Address <a target="_blank" href="../solutions/cea">visit this page</a>.</p>
         </div>
 
         <div class="border-bottom pb-3 mb-4">
@@ -826,24 +786,33 @@
 
         <h1 id="real" class="text-primary mb-4 text-center" style="line-height: 1.3;">Patent Basics</h1>
         <div class="border-bottom pb-3 mb-4">
-            <p>Apple copying our work by forcing their "App Store" developers to support "Sign in with Apple". Most of them have no idea how patent works. This section provides a quick overview. Skip this part if you already know about patents. </p>
+            <p>Apple copying my work by forcing their "App Store" developers to support "Sign in with Apple". Most of them have no idea how patent works.</p>
+            <p>The following is a response from a "Sign in with Apple" developer when I tried to explain him what's going on.</p>
+            <blockquote>
+                <p>Email masking has been around forever. You've thought of nothing new, save some weird proprietary &lt;thing> to make your patent seemingly valid. You’d have no case anywhere since it’s in common use by many, many, many companies and has been for a long time.</p>
+            </blockquote>
+            <p><strong>You get patent for inventive steps. Not for an entire category.</strong></p>
+            <p>This section provides a quick overview. Skip this section if you already know about patents. </p>
             <p>Patentability mainly focuses on two things. Novelty and Non-Obviousness. In some countries, the latter part is called as "Inventive Step".</p>
             <p><b>Novelty</b> - The "Novelty" principle asks whether the invention was known to the public "exactly as described" before the filing date of the patent application. Novelty is straightforward. You either invented something or you don't.</p>
             <p><b>Non-Obviousness</b> - The "Non-Obviousness" principle asks whether the invention is an adequate distance beyond what's already known to the public. </p>
             <p>Determining "Non-Obviousness" is extremely hard. So courts sometimes rely on secondary considerations for determining non-obviousness. To quote Federal Circuit which is known for its decisions on patent law, "evidence of secondary considerations may often be the most probative and cogent evidence in the record". </p>
             <p>So "non-obviousness" deals with questions like (1) Is the invention commercially successful? (2) Did others fail before? (3) Are people praising the invention, especially competitors? (4) Did the invention recognize a problem that has never been recognized before? (5) Are competitors trying to copy the invention? etc.</p>
             <p><b>Prior Art</b> - One way or another, all form of invention rely on already known ideas. For example, my "Teleport" button [or "Sign in with Apple" button if you prefer], is an improvement over buttons like "Sign in with Google" and "Sign in with Facebook". </p>
+            <p>If your invention do not have any prior art, that means you either ahead of its time (e.g. Someone invented an iPhone in the 18th century) OR you are not working on a notable problem i.e. If the problem is notable, then others tried to solve it and failed.</p>
             <p>Any publicly available evidence which is close to the invention is called as "Prior Art". In my invention's case, it is <a target="_blank" href="https://patentimages.storage.googleapis.com/2e/8e/8b/51b9b098ca0464/WO2014105263A1.pdf">WO2014105263A1</a>. Apple copied my work with the help of that document. So from this point forward, the term "Prior Art" refers to WO2014105263A1.</p>
             <p><b>Provisional Rights</b> - "Provisional rights" allow a patent owner to collect damages from the infringers for activities occurring between "the date of the patent application publication" and "the patent granting date". </p>
+            <p><b>Patent</b> - A patent is a government license that exclude others from making, using, or selling the invention without the inventor's permission for a limited period of time. This period is usually 20 years. Patent system's main purpose is to encourage innovation. A patented cancer cure is better than not having a cure at all. </p>
             <p><b>Patent Infringement</b> - Patent infringement occurs once the patent get granted. Patent laws are country-specific. Under US law,
                 <a target="_blank" href="https://www.law.cornell.edu/uscode/text/35/271">35 U.S. Code § 271</a> states the following:</p>
             <blockquote>
                 <p>(a) Except as otherwise provided in this title, whoever without authority makes, uses, offers to sell, or sells any patented invention, within the United States or imports into the United States any patented invention during the term of the patent therefor, infringes the patent.</p>
                 <p>(b) Whoever actively induces infringement of a patent shall be liable as an infringer.</p>
             </blockquote>
-            <p><b>Direct Infringement</b> - It occurs when the main party makes, uses, offers to sell, or sells the invention without the inventor's permission. [If our patent get granted, it's Apple, Inc.]</p>
-            <p><b>Indirect Infringement</b> - Secondary liability, or indirect infringement, arises when a party materially contributes to, facilitates, induces, or is otherwise responsible for infringing acts carried out by the main party. [If our patent get granted, it's all websites and apps that support "Sign in with Apple" button]</p>
-            <p><b>Induced Infringement</b> - A form of Indirect Infringement where the party "cause[s], urge[s], encourage[s], or aid[s]" the infringing acts carried out by the main party. [If our patent get granted, it's the media articles and bloggers who goes like this. <a target="_blank" href="https://www.computerworld.com/article/3452840/why-you-should-begin-using-sign-in-with-apple.html">Why you should begin using Sign in with Apple</a>]</p>
+            <p><b>Direct Infringement</b> - It occurs when the main party makes, uses, offers to sell, or sells the invention without the inventor's permission.  </p>
+            <p>The term "main party" depends on the claim language. From the Apple perspective "Sign in with Apple" is a product. From the Developer perspective "Sign in with Apple" is a "medium" for sending mails. The "main party or parties" doesn't need to know that a patent exists in order to be held liable.</p>
+            <p><b>Indirect Infringement</b> - Secondary liability, or indirect infringement, arises when a party materially contributes to, facilitates, induces, or is otherwise responsible for infringing acts carried out by the main party.</p>
+            <p><b>Induced Infringement</b> - A form of Indirect Infringement where the party "cause[s], urge[s], encourage[s], or aid[s]" the infringing acts carried out by the main party. e.g. media articles and bloggers who goes like this. <a target="_blank" href="https://www.computerworld.com/article/3452840/why-you-should-begin-using-sign-in-with-apple.html">Why you should begin using Sign in with Apple</a></p>
         </div>
 
         <h1 id="how" class="text-primary mb-4 text-center" style="line-height: 1.3;">How Apple copying our work?</h1>
@@ -1103,7 +1072,18 @@
                         <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/spapi2.png" >
                     </div>
                     <p>Javacript is one of the most popular programming languge. Apple's argument here is, their client library "Sign in with Apple JS" is not provided by Apple. It's provided by their system. Hence they are entitled to copy my work for non-mobile platforms.</p>
-                    <p>Here is something interesting. When Apple released their product in June 2019, they had access to only my white paper. The provisional application I filed before my white paper actually contains more content. One aspect of my work uses what they call "system-provided javascript API" to generate dombox addresses. And those dombox addresses rely on Sender Alias Domains. So it was well covered in my provisional application. These two screenshots were taken from the provisional application I filed on Feb 14, 2020. [<a
+                    <p>But the main reason they are providing "Sign in with Apple JS" is due to a big misunderstanding. When Apple released their product in June 2019, they had access to only my published white paper. The provisional application I filed before publishing my white paper actually has more content.</p>
+                    <p>The following part found in my white paper, is the main reason why Apple going for "Sign in with Apple JS".</p>
+                    <div class="rounded mb-3 text-center">
+                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/spapi3.png" >
+                    </div>
+                    <p>Their argument is, "javascript-based" client library is not covered in that part.</p>
+                    <p>But that part was covered little differently in the provisional application I filed before publishing my white paper.</p>
+                    <div class="rounded mb-3 text-center">
+                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/82prior.jpg" >
+                    </div>
+
+                    <p>One more aspect of my work uses what they call "system-provided javascript API" and it is associated with dombox addresses [i.e. All my inventive steps Apple trying to copy]. So "javascript-based" client is well covered in my provisional application. These two screenshots were taken from the provisional application I filed on Feb 14, 2020. [<a
                             target="_blank" href="../assets/images/apple/pro108.jpg">Screenshot 1</a>] [<a target="_blank" href="../assets/images/apple/pro109.jpg">Screenshot 2</a>]</p>
 
                     <h2 class="mt-5 pt-3 border-top">OAuth2 Support</h2>
