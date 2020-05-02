@@ -812,7 +812,7 @@
             </div>
         </div>
 
-        <h1 id="real" class="text-primary mb-4 text-center" style="line-height: 1.3;">Patent Basics</h1>
+        <h1 id="pat-basics" class="text-primary mb-4 text-center" style="line-height: 1.3;">Patent Basics</h1>
         <div class="border-bottom pb-3 mb-4">
             <p>Apple copying my work by forcing their "App Store" developers to support "Sign in with Apple". Most of them have no idea how patent works.</p>
             <p>The following is a response from a "Sign in with Apple" developer when I tried to explain him what's going on.</p>
@@ -1159,6 +1159,26 @@
                     <p>OpenID Connect relies on OAuth2.</p>
                     <p>Initially "Sign in with Apple" was not compatible with OpenID Connect. OpenID Foundation Chairman, Nat Sakimura wrote an <a target="_blank" href="https://openid.net/2019/06/27/open-letter-from-the-openid-foundation-to-apple-regarding-sign-in-with-apple/">Open Letter</a> to Craig Federighi asking "Sign in with Apple" to be compatible with "OpenID Connect" and asked Apple to join the OpenID Foundation. Because of that, Apple is now
                         <a target="_blank" href="https://openid.net/2019/09/30/apple-successfully-implements-openid-connect-with-sign-in-with-apple/">compatible</a> with OpenID Connect.</p>
+
+                    <h2 class="mt-5 pt-3 border-top" id="http-post">HTTP POST Method</h2>
+                    <p>Typical "Sign in with X" type buttons use HTTP GET method. "Sign in with Apple" on the other hand, use HTTP POST method for delivering the data.</p>
+                    <div class="rounded mb-3 text-center">
+                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/httppost.png" >
+                    </div>
+                    <p>The following is the reason.</p>
+                    <div class="rounded mb-3 text-center">
+                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/httppost1.png" >
+                    </div>
+
+                    <h2 class="mt-5 pt-3 border-top" id="domain-must">Must include a domain name</h2>
+                    <p>They don't allow IP address or localhost for redirect uri.</p>
+                    <div class="rounded mb-3 text-center">
+                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/domainmust.png" >
+                    </div>
+                    <p>The following is the reason.</p>
+                    <div class="rounded mb-3 text-center">
+                        <img class="shadow-lg img-fluid rounded-lg" src="../assets/images/apple/domainmust1.png" >
+                    </div>
 
                     <h2 class="pt-3 border-top">The Web Connection</h2>
                     <p>Apple's entire heist is centered around the "domain policy list" provided for preventing fake "mobile" apps. So pay attention to the "your app's accompanying website" part. </p>
